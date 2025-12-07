@@ -1,0 +1,47 @@
+AI Mood-to-Music Recommender
+Enter your mood sentence each time.
+Type 'exit' to finish and show the graph.
+
+How do you feel today? >>>  good
+
+--- RESULT ---
+Detected Mood : Happy
+Match Score   : 0
+Music Suggest : Pop / Dance
+---------------------------
+
+How do you feel today? >>>  i am happy
+
+--- RESULT ---
+Detected Mood : Happy
+Match Score   : 1
+Music Suggest : Pop / Dance
+---------------------------
+
+How do you feel today? >>>  going good
+
+--- RESULT ---
+Detected Mood : Happy
+Match Score   : 0
+Music Suggest : Pop / Dance
+---------------------------
+
+How do you feel today? >>>  i am feeling sad
+
+--- RESULT ---
+Detected Mood : Sad
+Match Score   : 1
+Music Suggest : Soft Piano / Acoustic
+---------------------------
+
+How do you feel today? >>>  tired
+
+--- RESULT ---
+Detected Mood : Stressed
+Match Score   : 1
+Music Suggest : Lo-Fi / Ambient
+---------------------------
+
+How do you feel today? >>>  exit
+
+Preparing your mood graph...
