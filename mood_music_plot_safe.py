@@ -1,11 +1,6 @@
-# mood_music_plot_safe.py
-# AI Mood-to-Music Recommender (User Input + Auto Graph + Save PNG)
-
 import os
 import sys
 import matplotlib.pyplot as plt
-
-# ---- NLP mood keywords ----
 mood_keywords = {
     "happy": ["happy", "joy", "excited", "great", "love"],
     "sad": ["sad", "down", "unhappy", "cry"],
@@ -13,8 +8,6 @@ mood_keywords = {
     "stressed": ["tired", "pressure", "overwhelmed", "stress"],
     "calm": ["calm", "peaceful", "relaxed", "okay"]
 }
-
-# ---- Music recommendations ----
 music_recs = {
     "happy": "Pop / Dance",
     "sad": "Soft Piano / Acoustic",
@@ -22,19 +15,11 @@ music_recs = {
     "stressed": "Lo-Fi / Ambient",
     "calm": "Meditation / Chill"
 }
-
-# store user moods
 mood_history = []
-
-
-# ---- Helper: tokenize text ----
 def tokenize(text):
     for ch in ".,!?;:\n\t":
         text = text.replace(ch, " ")
     return text.lower().split()
-
-
-# ---- Predict mood based on NLP scoring ----
 def predict_mood(text):
     tokens = tokenize(text)
     scores = {mood: 0 for mood in mood_keywords}
@@ -46,9 +31,6 @@ def predict_mood(text):
 
     best_mood = max(scores, key=scores.get)
     return best_mood, scores[best_mood]
-
-
-# ---- Plot and save graph ----
 def plot_and_save(mood_list, filename="mood_frequency.png"):
 
     if not mood_list:
@@ -78,9 +60,6 @@ def plot_and_save(mood_list, filename="mood_frequency.png"):
         print("Graph display failed, but image is saved.")
 
     return True
-
-
-# ---- MAIN PROGRAM ----
 print("AI Mood-to-Music Recommender")
 print("Enter your mood sentence each time.")
 print("Type 'exit' to finish and show the graph.\n")
@@ -108,3 +87,4 @@ while True:
 print("\nPreparing your mood graph...")
 plot_and_save(mood_history)
 print("\nDone! If graph didn't open, open mood_frequency.png manually.")
+
